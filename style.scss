@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --primary-green:#06BF51;
+    --primary-white:#ffffff;
+    --primary-text:#404040;
+    --secondary-text:#595959;
+    --header-text:#212121;
+    --primary-icon:#584D4D;
+    --primary-border:#DDDDDD;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Hind Siliguri',sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    z-index: 9999999999999999;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    width: 100%;
+}
+
+.d-none{
+    display: none;
+}
+
+.modal__overlay{
+    background:linear-gradient(rgba(33, 33, 33, 0.8),rgba(33, 33, 33, 0.8))
+}
+
+.modal__container{
+    text-align: center;
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform:translate(-50%,-51%);
+    width: 400px;
+    background:var(--primary-white);
+    padding:15px 10px;
+    border-radius:15px;
+    z-index: 9999999999;
+    p{
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        color: var(--header-text);
+        font-size: 18px;
+    }
+
+    #modal__btn{
+        padding: 8px 20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        margin-top: 13px;
+        border-radius: 2px;
+        border:1px solid var(--primary-green);
+        color:var(--primary-green);
+        background:var(--primary-white);
+        transition: .3s;
+        &:hover{
+            background:var(--primary-green);
+            color: var(--primary-white);
+        }
+    }
+}
+
+/* ======================
+    Header Styles
+========================= */
+
+header{
+    padding-top: 20px;
+    .logo{
+        display: flex;
+        img{
+            width: 40px;
+        }
+        h2{
+            color: var(--header-text);
+            font-weight: 400;
+            font-size: 25px;
+            margin-left: 5px;
+        }
+    }
+
+    .menu{
+        align-self: center;
+        #btn__open{
+            color:var(--header-text);
+            background:none;
+            border:0;
+            z-index: 999;
+            transition:.8s;
+            cursor: pointer;
+            i{
+                font-size: 25px;
+                color: var(--primary-icon);
+            }
+        }
+        aside{
+            border-left: 1px solid var(--primary-border);
+            height: 100vh;
+            width: 335px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            box-sizing: border-box;
+            z-index: 9999;
+            transform: translate(100%);
+            transition:.5s;
+            background:var(--primary-white);
+            .aside__header{
+                .close__btn{
+                    #btn__close{
+                        background:none;
+                        border:0;
+                        padding: 18px;
+                        cursor: pointer;
+                        i{
+                            font-size: 25px;
+                            color: var(--primary-icon);
+                        }
+                    }
+                }
+            }
+            .aside__list{
+                margin-top: 40px;
+                ul{
+                    li{
+                        list-style-type: none;
+                        padding: 10px 18px;
+                        .list__info__container{
+                            display: flex;
+                            .list__info{
+                                span{
+                                    font-size: 18px;
+                                    color: var(--primary-text);
+                                    margin-left: 4px;
+                                    font-weight: 400;
+                                    span{
+                                        font-size: 12px;
+                                        color: var(--secondary-text);
+                                        margin-left: 20px;
+                                        vertical-align: middle;
+                                        font-weight: 400;
+                                    }
+                                }
+                                i{
+                                    color: var(--primary-icon);
+                                    font-size: 18px;
+                                    vertical-align: middle;
+                                }
+                            }
+                        }
+                        &:hover{
+                            background:rgba(221, 221, 221, 0.7);
+                            .list__info{
+                                span{
+                                    color: var(--primary-text);
+                                    span{
+                                        color: var(--primary-text);
+                                    }
+                                }
+                                i{
+                                    color: var(--primary-text);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .aside__open{
+            transform:translate(0);
+        }
+    }
+
+
+
+}
+
+.playing{
+    background:rgba(6, 191, 80, 0.2);
+    .list__info{
+        span{
+            color: rgba(6, 191, 80, 0.9) !important;
+            
+        }
+        i{
+            color: rgba(6, 191, 80, 0.9) !important; 
+        }
+    }
+    &:hover{
+        background:rgba(6, 191, 80, 0.2) !important;
+    }
+}
+
+/* ======================
+    Section Styles
+========================= */
+
+section{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .audio__container{
+        .audio__info{
+            h2{
+                font-size: 50px;
+                font-weight: 500;
+                color: var(--header-text);
+            }
+            span{
+                font-size: 15px;
+                color: var(--primary-text);
+                display: inline-block;
+                margin: 5px 0 10px;
+                font-weight: 400;
+            }
+        }
+        .audio__controls{
+            .control__btn{
+                background:var(--primary-green);
+                color: var(--primary-white);
+                border:0;
+                cursor: pointer;
+            }
+            .prev__btn{
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                font-size: 18px;
+            }
+            .play__btn{
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                font-size: 25px;
+                margin: 0 5px;
+            }
+            .next__btn{
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                font-size: 18px;
+            }
+            .audio__progress{
+                width: 340px;
+                height: 7px;
+                background:var(--primary-border);
+                display: block;
+                border-radius: 10px;
+                margin: 20px 0;
+                cursor: pointer;
+            }
+            .progress{
+                background: var(--primary-green);
+                border-radius: 10px;
+                width: 0;
+                height: 7px;
+                transition: .1s;
+            }
+        }
+    }
+}
+
+
+/* ======================
+    Footer Styles
+========================= */
+
+footer{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 60%;
+    color:var(--primary-text);
+    p{
+        font-size: 18px;
+    }
+    span{
+        font-size: 16px;
+        margin: 3px 0;
+        display: inline-block;
+    }
+    p{
+        font-size: 16px;
+        span{
+            color: var(--primary-green);
+        }
+    }
+
+}
+
+
+/* Media Queries */
+
+/* XL Device :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
+    .container{
+        width: 1150px;
+    }
+}
+
+/* LG Device :992px. */
+@media (min-width: 1000px) and (max-width: 1199.99px) {
+    .container{
+        width: 990px;
+    }
+}
+
+ 
+/* MD Device :768px. */
+@media (min-width: 768px) and (max-width: 1000px) {
+    .container{
+        width: 750px;
+    }
+}
+
+ 
+/* Extra small Device. */
+@media (max-width: 767px) {
+    .container{
+        width: 650px;
+    }
+}
+ 
+/* SM Small Device :550px. */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    .container{
+        width: 565px;
+    }
+    
+}
+
+@media only screen and (min-width: 430px) and (max-width: 575.99px) {
+    .container{
+        width: 410px;
+    }
+}
+@media only screen and (min-width: 350px) and (max-width: 575px) {
+    .modal__container{
+        width: 320px;
+    }
+    .container{
+        width: 335px;
+    }
+    aside{
+        width: 100% !important;
+    }
+    section{
+        .audio__container{
+            .audio__info{
+                h2{
+                    font-size: 40px;
+                }
+                span{
+                    font-size: 13px;
+                }
+            }
+        }
+        .audio__controls{
+            .prev__btn{
+                width: 28px !important;
+                height: 28px !important;
+                font-size: 16px !important;
+            }
+            .play__btn{
+                width: 44px !important;
+                height: 44px !important;
+                font-size: 20px !important;
+            }
+            .next__btn{
+                width: 28px !important;
+                height: 28px !important;
+                font-size: 16px !important;
+            }
+            .audio__progress{
+                width: 300px !important;
+            }
+        }
+    }
+    footer{
+        width: 75%;
+        p{
+            font-size: 18px;
+        }
+        span{
+            font-size: 14px;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+}

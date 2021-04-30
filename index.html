@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran Player</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="modal__overlay">
+    <div class="modal__container">
+        <p>Use Spacebar to play/pause.Use ⬆/⬅ to go to previous one.Use ⬇/➡ to go to next one.
+        </p>
+        <button type="submit" id="modal__btn">Close</button>
+    </div>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <img src="assets/quran-logo.png" alt="Logo">
+                <h2>কোরআন তিলাওয়াত</h2>
+            </div>
+            <div class="menu">
+                <button type="submit" id="btn__open">
+                     <i class="fas fa-bars"></i>
+                </button>
+                <aside>
+                    <div class="aside__header">
+                        <div class="close__btn">
+                            <button type="button" id="btn__close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>    
+                        <div class="aside__list">
+                            <ul>
+                                <li>
+                                    <div class="list__info__container">
+                                        <div class="list__info">
+                                            <i class="fas fa-play"></i>
+                                            <span>সুরা ফাতিহা<span>(সুরা-১•আয়াত-৭•মক্কায় অবতীর্ণ)</span></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list__info__container">
+                                        <div class="list__info">
+                                            <i class="fas fa-play"></i>
+                                            <span>আয়াতুল কুরসি<span>(সুরা-বাকারাহ ২৫৫ নং আয়াত)</span></span>
+                                        </div>
+                                        
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list__info__container">
+                                        <div class="list__info">
+                                            <i class="fas fa-play"></i>
+                                            <span>সুরা রহমান<span>(সুরা-৫৫•আয়াত-৭৮•মদিনায় অবতীর্ণ)</span></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list__info__container">
+                                        <div class="list__info">
+                                            <i class="fas fa-play"></i>
+                                            <span>সুরা মুলক<span>(সুরা-৬৭•আয়াত-৩০•মক্কায় অবতীর্ণ)</span></span>
+                                        </div> 
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list__info__container">
+                                        <div class="list__info">
+                                            <i class="fas fa-play"></i>
+                                            <span>সুরা ত্বীন<span>(সুরা-৯৫•আয়াত-৮•মক্কায় অবতীর্ণ)</span></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="audio__container">
+            <div class="audio__info">
+                <h2 id="audio__title">সুরা ফাতিহা</h2>
+                <span>ওমার হিশাম আল আরাবি</span>
+            </div>
+            <div class="audio__controls">
+                <button class="control__btn prev__btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control__btn play__btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="control__btn next__btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <div class="audio__progress">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            <audio src="assets/সুরা ফাতিহা.mp3"></audio>
+        </div>
+    </section>
+    <footer>
+        <p>‘যখন কোরআন পাঠ করা হয় তখন তোমরা মনোযোগ সহকারে উহা শ্রবণ করবে এবং নিশ্চুপ হয়ে থাকবে, যাতে তোমরা রহমত প্রাপ্ত হও।’</p>
+        <span>আল আরাফ-২০৪</span>
+        <p>Designed & Developed by <span>Meherab Samir</span></p>
+    </footer>
+    <!-- JS SCRIPT -->
+    <script src="script.js"></script>
+</body>
+
+</html>
