@@ -29,7 +29,7 @@ let songIndex = 0;
 loadSong(songs[songIndex])
 function loadSong(song) {
   title.innerText = song
-  audio.src = `assets/${ song }.mp3`
+  audio.src = `assets/audio/${ song }.mp3`
   listItem[songIndex].classList.add('playing')
 }
  
